@@ -18,7 +18,7 @@ import {
 
 const PrescriptionViewer = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedPrescription, setSelectedPrescription] = useState<number | null>(null);
+  const [selectedPrescription, setSelectedPrescription] = useState(null);
 
   const prescriptions = [
     {

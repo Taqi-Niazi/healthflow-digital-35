@@ -3,15 +3,15 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import PatientDashboard from "./components/Dashboard/PatientDashboard";
-import DoctorDashboard from "./components/Dashboard/DoctorDashboard";
-import AdminDashboard from "./components/Dashboard/AdminDashboard";
-import LoginForm from "./components/Auth/LoginForm";
-import RegisterForm from "./components/Auth/RegisterForm";
-import AppointmentBooking from "./components/Appointments/AppointmentBooking";
-import PrescriptionViewer from "./components/Prescriptions/PrescriptionViewer";
-import NotFound from "./pages/NotFound";
+import HomePage from "./pages/HomePage.jsx";
+import PatientDashboard from "./components/Dashboard/PatientDashboard.jsx";
+import DoctorDashboard from "./components/Dashboard/DoctorDashboard.jsx";
+import AdminDashboard from "./components/Dashboard/AdminDashboard.jsx";
+import LoginForm from "./components/Auth/LoginForm.jsx";
+import RegisterForm from "./components/Auth/RegisterForm.jsx";
+import AppointmentBooking from "./components/Appointments/AppointmentBooking.jsx";
+import PrescriptionViewer from "./components/Prescriptions/PrescriptionViewer.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 const queryClient = new QueryClient();
 

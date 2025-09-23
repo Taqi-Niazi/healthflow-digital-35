@@ -55,7 +55,7 @@ const AppointmentBooking = () => {
 
   const selectedDoctorData = doctors.find(doc => doc.id.toString() === selectedDoctor);
 
-  const handleBookAppointment = (e: React.FormEvent) => {
+  const handleBookAppointment = (e) => {
     e.preventDefault();
     // Handle appointment booking logic here
     console.log("Booking appointment...");

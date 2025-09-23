@@ -11,10 +11,10 @@ import { useNavigate } from "react-router-dom";
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [userType, setUserType] = useState<"patient" | "doctor" | "admin">("patient");
+  const [userType, setUserType] = useState("patient");
   const navigate = useNavigate();
 
-  const handleRegister = (e: React.FormEvent) => {
+  const handleRegister = (e) => {
     e.preventDefault();
     // Simulate registration and redirect to login
     navigate("/login");
@@ -47,7 +47,7 @@ const RegisterForm = () => {
               {/* User Type Selection */}
               <div className="space-y-2">
                 <Label>Account Type</Label>
-                <Select value={userType} onValueChange={(value: "patient" | "doctor" | "admin") => setUserType(value)}>
+                <Select value={userType} onValueChange={(value) => setUserType(value)}>
                   <SelectTrigger>
                     <SelectValue placeholder="Select account type" />
                   </SelectTrigger>

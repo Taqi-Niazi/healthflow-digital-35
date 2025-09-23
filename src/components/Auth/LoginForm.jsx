@@ -9,10 +9,10 @@ import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [userType, setUserType] = useState<"patient" | "doctor" | "admin">("patient");
+  const [userType, setUserType] = useState("patient");
   const navigate = useNavigate();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = (e) => {
     e.preventDefault();
     // Simulate login and redirect to appropriate dashboard
     switch (userType) {
@@ -30,21 +30,21 @@ const LoginForm = () => {
 
   const userTypeOptions = [
     {
-      type: "patient" as const,
+      type: "patient",
       label: "Patient",
       icon: User,
       description: "Access your health records",
       gradient: "from-primary to-primary-glow"
     },
     {
-      type: "doctor" as const,
+      type: "doctor",
       label: "Doctor",
       icon: Stethoscope,
       description: "Manage your patients",
       gradient: "from-secondary to-accent"
     },
     {
-      type: "admin" as const,
+      type: "admin",
       label: "Admin",
       icon: Shield,
       description: "System administration",

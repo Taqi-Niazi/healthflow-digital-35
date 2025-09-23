@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Header from "@/components/Layout/Header";
+import Header from "@/components/Layout/Header.jsx";
 import { 
   Calendar, 
   Shield, 
