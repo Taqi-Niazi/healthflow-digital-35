@@ -135,7 +135,7 @@ const AdminDashboard = () => {
     }
   ];
 
-  const getActivityIcon = (type: string) => {
+  const getActivityIcon = (type) => {
     switch (type) {
       case "user":
         return Users;
@@ -148,7 +148,7 @@ const AdminDashboard = () => {
     }
   };
 
-  const getActivityColor = (status: string) => {
+  const getActivityColor = (status) => {
     switch (status) {
       case "success":
         return "text-medical-success";
@@ -161,13 +161,13 @@ const AdminDashboard = () => {
     }
   };
 
-  const getHealthColor = (status: string, usage: number) => {
+  const getHealthColor = (status, usage) => {
     if (status === "warning" || usage > 80) return "text-medical-warning";
     if (status === "secure" || status === "healthy") return "text-medical-success";
     return "text-muted-foreground";
   };
 
-  const getPriorityColor = (priority: string) => {
+  const getPriorityColor = (priority) => {
     switch (priority) {
       case "high":
         return "bg-medical-error/20 text-medical-error border-medical-error/30";
