@@ -108,7 +108,7 @@ const PrescriptionViewer = () => {
     prescription.medications.some(med => med.name.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
-  const getStatusColor = (status: string) => {
+  const getStatusColor = (status) => {
     switch (status) {
       case "active":
         return "bg-medical-success text-white";
@@ -121,7 +121,7 @@ const PrescriptionViewer = () => {
     }
   };
 
-  const getStatusIcon = (status: string) => {
+  const getStatusIcon = (status) => {
     switch (status) {
       case "active":
         return CheckCircle;
