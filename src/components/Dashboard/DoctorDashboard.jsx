@@ -102,7 +102,7 @@ const DoctorDashboard = () => {
     }
   ];
 
-  const getStatusColor = (status: string) => {
+  const getStatusColor = (status) => {
     switch (status) {
       case "confirmed":
         return "bg-medical-success text-white";
@@ -115,7 +115,7 @@ const DoctorDashboard = () => {
     }
   };
 
-  const getPatientStatusColor = (status: string) => {
+  const getPatientStatusColor = (status) => {
     switch (status) {
       case "stable":
         return "bg-medical-success/20 text-medical-success border-medical-success/30";
