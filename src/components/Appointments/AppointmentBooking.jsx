@@ -62,15 +62,15 @@ const AppointmentBooking = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-foreground mb-2">Book Appointment</h1>
+    <div className="responsive-container py-6 sm:py-8">
+      <div className="mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">Book Appointment</h1>
         <p className="text-muted-foreground">Schedule your appointment with our healthcare professionals</p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
         {/* Doctor Selection */}
-        <div className="lg:col-span-2">
+        <div className="xl:col-span-2">
           <Card className="shadow-medium mb-6">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -86,19 +86,19 @@ const AppointmentBooking = () => {
                     key={doctor.id}
                     className={`border rounded-lg p-4 cursor-pointer transition-all duration-200 ${
                       selectedDoctor === doctor.id.toString()
-                        ? "border-primary bg-primary/5"
+                        ? "border-primary bg-primary/5 shadow-medium"
                         : "border-border hover:border-primary/50 hover:bg-muted/50"
                     }`}
                     onClick={() => setSelectedDoctor(doctor.id.toString())}
                   >
-                    <div className="flex items-center space-x-4">
-                      <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center">
+                    <div className="flex flex-col sm:flex-row sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
+                      <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto sm:mx-0 shrink-0">
                         <User className="h-8 w-8 text-white" />
                       </div>
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-foreground">{doctor.name}</h3>
-                        <p className="text-muted-foreground">{doctor.specialty}</p>
-                        <div className="flex items-center gap-4 mt-2">
+                      <div className="flex-1 text-center sm:text-left">
+                        <h3 className="font-semibold text-foreground text-lg">{doctor.name}</h3>
+                        <p className="text-muted-foreground mb-2">{doctor.specialty}</p>
+                        <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3">
                           <div className="flex items-center gap-1">
                             <Star className="h-4 w-4 text-yellow-500 fill-current" />
                             <span className="text-sm font-medium">{doctor.rating}</span>
@@ -108,7 +108,8 @@ const AppointmentBooking = () => {
                           </Badge>
                           <span className="text-sm text-muted-foreground flex items-center gap-1">
                             <MapPin className="h-3 w-3" />
-                            {doctor.location}
+                            <span className="hidden sm:inline">{doctor.location}</span>
+                            <span className="sm:hidden">Location</span>
                           </span>
                         </div>
                       </div>
@@ -166,9 +167,9 @@ const AppointmentBooking = () => {
 
                 {/* Time Slots */}
                 {selectedDoctorData && selectedDate && (
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     <Label>Available Time Slots</Label>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
                       {selectedDoctorData.availableSlots.map((slot) => (
                         <button
                           key={slot}
@@ -176,7 +177,7 @@ const AppointmentBooking = () => {
                           onClick={() => setSelectedTime(slot)}
                           className={`p-3 rounded-lg border text-sm font-medium transition-all duration-200 ${
                             selectedTime === slot
-                              ? "border-primary bg-primary text-white"
+                              ? "border-primary bg-primary text-white shadow-medium"
                               : "border-border hover:border-primary hover:bg-primary/10"
                           }`}
                         >

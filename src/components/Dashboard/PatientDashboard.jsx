@@ -61,17 +61,17 @@ const PatientDashboard = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-foreground mb-2">Patient Dashboard</h1>
+    <div className="responsive-container py-6 sm:py-8">
+      <div className="mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">Patient Dashboard</h1>
         <p className="text-muted-foreground">Welcome back, John Doe</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+      <div className="responsive-grid mb-6 sm:mb-8">
         {/* Quick Actions */}
-        <Card className="shadow-medium hover:shadow-strong transition-all duration-300">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
+        <Card className="shadow-medium card-hover">
+          <CardHeader className="pb-4">
+            <CardTitle className="flex items-center gap-2 text-lg">
               <Calendar className="h-5 w-5 text-primary" />
               Book Appointment
             </CardTitle>
@@ -84,9 +84,9 @@ const PatientDashboard = () => {
           </CardContent>
         </Card>
 
-        <Card className="shadow-medium hover:shadow-strong transition-all duration-300">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
+        <Card className="shadow-medium card-hover">
+          <CardHeader className="pb-4">
+            <CardTitle className="flex items-center gap-2 text-lg">
               <FileText className="h-5 w-5 text-secondary" />
               Medical Records
             </CardTitle>
@@ -99,9 +99,9 @@ const PatientDashboard = () => {
           </CardContent>
         </Card>
 
-        <Card className="shadow-medium hover:shadow-strong transition-all duration-300">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
+        <Card className="shadow-medium card-hover">
+          <CardHeader className="pb-4">
+            <CardTitle className="flex items-center gap-2 text-lg">
               <Pill className="h-5 w-5 text-medical-info" />
               Prescriptions
             </CardTitle>
@@ -115,7 +115,7 @@ const PatientDashboard = () => {
         </Card>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6 sm:mb-8">
         {/* Upcoming Appointments */}
         <Card className="shadow-medium">
           <CardHeader>
@@ -165,14 +165,14 @@ const PatientDashboard = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {healthMetrics.map((metric, index) => {
                 const IconComponent = metric.icon;
                 return (
-                  <div key={index} className="border border-border rounded-lg p-3 text-center">
+                  <div key={index} className="border border-border rounded-lg p-3 sm:p-4 text-center hover:bg-muted/30 transition-colors">
                     <IconComponent className="h-6 w-6 text-primary mx-auto mb-2" />
                     <p className="text-sm text-muted-foreground mb-1">{metric.label}</p>
-                    <p className="font-semibold text-foreground">{metric.value}</p>
+                    <p className="font-semibold text-foreground text-lg">{metric.value}</p>
                     <Badge 
                       variant="secondary" 
                       className="mt-2 bg-medical-success/20 text-medical-success border-medical-success/30"
@@ -199,15 +199,15 @@ const PatientDashboard = () => {
           <div className="space-y-4">
             {recentPrescriptions.map((prescription) => (
               <div key={prescription.id} className="border border-border rounded-lg p-4 hover:bg-muted/50 transition-colors">
-                <div className="flex justify-between items-start mb-2">
-                  <div>
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
+                  <div className="flex-1">
                     <h4 className="font-semibold text-foreground">{prescription.medication}</h4>
                     <p className="text-sm text-muted-foreground">Prescribed by {prescription.prescribedBy}</p>
                   </div>
                   <span className="text-sm text-muted-foreground">{prescription.date}</span>
                 </div>
-                <p className="text-sm text-muted-foreground">{prescription.instructions}</p>
-                <Button size="sm" variant="outline" className="mt-2">
+                <p className="text-sm text-muted-foreground mb-3">{prescription.instructions}</p>
+                <Button size="sm" variant="outline" className="w-full sm:w-auto">
                   View QR Code
                 </Button>
               </div>
